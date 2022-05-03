@@ -1,17 +1,18 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import classNames from "classnames";
-import logo from "../assets/images/logo.svg";
-import { ReactComponent as MenuIcon } from "../assets/icons/menu.svg";
-import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
-import { ReactComponent as Discord } from "../assets/icons/discord.svg";
-import { ReactComponent as Twitter } from "../assets/icons/twitter.svg";
-import { ReactComponent as Linkedin } from "../assets/icons/linkedin.svg";
+import logo from "../../assets/images/logo.svg";
+import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
+import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
+import { ReactComponent as Discord } from "../../assets/icons/discord.svg";
+import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
+import { ReactComponent as Linkedin } from "../../assets/icons/linkedin.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="px-2 sm:px-4 py-2.5">
-      <div className="container flex flex-wrap justify-between items-center mx-auto">
+    <nav className="px-2 sm:px-4">
+      <div className="container flex flex-wrap justify-between items-center h-[10vh] mx-auto">
         <a href="#" className="flex items-center">
           <img
             src={logo}
@@ -90,23 +91,11 @@ const Navbar = () => {
                 href="#"
                 className="block py-2 pr-2 pl-2 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                <Discord />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 pr-2 pl-2 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                <Twitter />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 pr-2 pl-2 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                <Linkedin />
+                <div className="flex items-center">
+                  <Discord className="mr-2.5" />
+                  <Twitter className="mr-2.5" />
+                  <Linkedin />
+                </div>
               </a>
             </li>
           </ul>
