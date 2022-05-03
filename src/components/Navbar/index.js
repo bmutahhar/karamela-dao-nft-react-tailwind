@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import classNames from "classnames";
 import logo from "../../assets/images/logo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
@@ -10,42 +11,67 @@ import { ReactComponent as Linkedin } from "../../assets/icons/linkedin.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const isMobileOrTablet = useMediaQuery({ query: "(max-width:768px)" });
+
+  useEffect(() => {
+    if (!isMobileOrTablet && isOpen) {
+      setIsOpen(false);
+    }
+  }, [isMobileOrTablet]);
+
   return (
-    <nav className="px-2 sm:px-4">
-      <div className="container flex flex-wrap justify-between items-center h-[10vh] mx-auto">
-        <a href="#" className="flex items-center">
-          <img
-            src={logo}
-            alt="Karamela DAO Logo"
-            className="mr-3 h-9 sm:h-12"
-          />
-        </a>
-        <button
-          data-collapse-toggle="mobile-menu"
-          type="button"
-          className="inline-flex items-center p-2 ml-3 md:hidden focus:outline-none"
-          aria-controls="mobile-menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span className="sr-only">Open main menu</span>
-          <MenuIcon
-            className={classNames(
-              {
-                hidden: isOpen,
-              },
-              "w-6 h-6"
-            )}
-          />
-          <CloseIcon
-            className={classNames(
-              {
-                hidden: !isOpen,
-              },
-              "w-6 h-6"
-            )}
-          />
-        </button>
+    <nav
+      className={classNames(
+        {
+          "h-[100vh] bg-bg-primary fixed top-0 left-0 right-0 bottom-0 z-50":
+            isOpen,
+        },
+        "px-2 sm:px-4"
+      )}
+    >
+      <div
+        className={classNames(
+          {
+            "justify-center": !isOpen,
+          },
+          "container flex flex-col md:flex-row md:justify-between items-center mx-auto h-[10vh]"
+        )}
+      >
+        <div className="w-full md:w-auto flex items-center justify-between py-2">
+          <a href="#" className="flex items-center">
+            <img
+              src={logo}
+              alt="Karamela DAO Logo"
+              className="mr-3 h-9 sm:h-12"
+            />
+          </a>
+          <button
+            data-collapse-toggle="mobile-menu"
+            type="button"
+            className="inline-flex items-center p-2 ml-3 md:hidden focus:outline-none transition-all"
+            aria-controls="mobile-menu"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <MenuIcon
+              className={classNames(
+                {
+                  hidden: isOpen,
+                },
+                "w-6 h-6"
+              )}
+            />
+            <CloseIcon
+              className={classNames(
+                {
+                  hidden: !isOpen,
+                },
+                "w-6 h-6"
+              )}
+            />
+          </button>
+        </div>
         <div
           className={classNames(
             { hidden: !isOpen },
@@ -91,7 +117,14 @@ const Navbar = () => {
                 href="#"
                 className="block py-2 pr-2 pl-2 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                <div className="flex items-center">
+                <div
+                  className={classNames(
+                    {
+                      "justify-center": isOpen,
+                    },
+                    "flex items-center"
+                  )}
+                >
                   <Discord className="mr-2.5" />
                   <Twitter className="mr-2.5" />
                   <Linkedin />
