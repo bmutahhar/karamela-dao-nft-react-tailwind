@@ -1,10 +1,12 @@
 import React from "react";
-import { Home } from "./pages";
+import { Home, Values, Token } from "./pages";
 
 const App = () => {
   return (
     <>
       <Home />
+      <Values />
+      <Token />
     </>
   );
 };
