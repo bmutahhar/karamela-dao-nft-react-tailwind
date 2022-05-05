@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Values, Token, Accordion } from "./pages";
+import { Home, Values, Token, Accordion, Footer } from "./pages";
 
 const App = () => {
   return (
@@ -8,6 +8,7 @@ const App = () => {
       <Values />
       <Token />
       <Accordion />
+      <Footer />
     </>
   );
 };

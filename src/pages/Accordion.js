@@ -53,7 +53,7 @@ const Accordion = () => {
     },
   ];
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center mb-[20rem]">
       <h2 className="text-3xl text-center sm:text-4xl font-bold mb-6">
         Frequently asked questions
       </h2>
@@ -84,11 +84,17 @@ const Accordion = () => {
                 />
               </span>
             </div>
-            {item.id === activeIndex && (
-              <p className="text-base font-normal text-[#D1D5DB] w-[90%]">
-                {item.answer}
-              </p>
-            )}
+
+            <p
+              className={classNames(
+                {
+                  hidden: item.id !== activeIndex,
+                },
+                "text-base font-normal text-[#D1D5DB] w-[90%] ease-in-out duration-500"
+              )}
+            >
+              {item.answer}
+            </p>
           </div>
         ))}
       </div>
