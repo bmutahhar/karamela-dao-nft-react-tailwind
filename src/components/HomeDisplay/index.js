@@ -8,12 +8,12 @@ const HomeDisplay = () => {
   return (
     <section
       id="main"
-      style={{ backgroundImage: `url(${bgHero})` }}
-      className="bg-cover bg-no-repeat bg-center"
+      // style={{ backgroundImage: `url(${bgHero})` }}
+      // className="bg-cover bg-no-repeat bg-center"
     >
-      <div className={`h-[100vh] flex items-center justify-center`}>
-        <div className="inline-block px-4">
-          <h1 className="text-4xl leading-[50px] mb-4 sm:mb-0 sm:leading-[75px] sm:text-6xl 2xl:text-8xl 2xl:leading-[125px] md:leading-[125px] md:text-7xl font-semibold ">
+      <div className={`h-[100vh] flex flex-col items-center justify-start`}>
+        <div className="inline-block px-4 mt-32">
+          <h1 className="text-center text-4xl leading-[50px] mb-4 sm:mb-0 sm:leading-[75px] sm:text-6xl 2xl:text-8xl 2xl:leading-[125px] md:leading-[125px] md:text-7xl font-semibold ">
             Sweet sweet DAO
           </h1>
           <p className="text-center text-base font-normal leading-5 w-0 min-w-full mb-8">

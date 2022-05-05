@@ -9,7 +9,7 @@ import karamelaIcon from "../assets/icons/karamela-icon.svg";
 const Token = () => {
   return (
     <section className="h-[100vh] w-full flex items-center justify-center">
-      <div className="w-[80%] h-[70%] md:h-[65%] 2xl:h-[50%] bg-transparent relative">
+      <div className="w-[80%] h-[70%] 2xl:h-[50%] bg-transparent relative">
         <img
           src={eyeIcon}
           alt="Eye Icon"

@@ -39,6 +39,13 @@ body {
   background: linear-gradient(90deg, #6e3fa3 0%, #00c65e 100%);
 }
 
+.hero-bg {
+  background-image: url("./assets//images//bg-hero.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 .frost-bg {
   background: linear-gradient(
     97.24deg,
