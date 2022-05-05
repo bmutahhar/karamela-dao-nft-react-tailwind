@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav
       className={classNames(
         {
-          "h-[100vh] fixed top-0 left-0 right-0 bottom-0 z-50 bg-bg-primary":
+          "h-[110vh] fixed top-0 left-0 right-0 bottom-0 z-50 bg-bg-primary":
             isOpen,
         },
         "px-2 sm:px-4 bg-transparent"

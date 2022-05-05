@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Values, Token } from "./pages";
+import { Home, Values, Token, Accordion } from "./pages";
 
 const App = () => {
   return (
@@ -7,6 +7,7 @@ const App = () => {
       <Home />
       <Values />
       <Token />
+      <Accordion />
     </>
   );
 };
